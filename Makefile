@@ -2,7 +2,8 @@
 #                                              FILES                          #
 ###############################################################################
 CFILES		= \
-			main.c
+			main.c create_list.c utils.c utils_struck.c move/rotate.c \
+			move/sa_sb_ss.c move/push.c
 OBJS	=	${CFILES:.c=.o}
 
 CLIBFT		= \

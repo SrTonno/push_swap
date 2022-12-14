@@ -1,41 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_struck.c                                     :+:      :+:    :+:   */
+/*   sa_sb_ss.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/08 18:29:05 by tvillare          #+#    #+#             */
-/*   Updated: 2022/12/14 12:48:08 by tvillare         ###   ########.fr       */
+/*   Created: 2022/12/13 18:22:36 by tvillare          #+#    #+#             */
+/*   Updated: 2022/12/14 11:54:47 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-t_order	*to_next(t_order *list_a, int out, int position) //pruebas
+t_order	*sa_sb(t_order *list)
 {
-	list_a->next = create_new_block(list_a, out, position);
-	list_a = list_a->next;
-	return (list_a);
-}
+	t_order	*tmp;
+	int		aux;
+	int		len;
 
-t_order	*find_end_list(t_order *list)
-{
-	while (list->next != NULL)
-		list = list->next;
+	len = ft_struclen(list);
+	if (len <= 1)
+		return (list);
+	tmp = list->next;
+	aux = list->number;
+	list->number = tmp->number;
+	tmp->number = aux;
 	return (list);
 }
 
-int	ft_struclen(t_order *list)
+void	ss(t_order *list_a, t_order *list_b)
 {
-	int count;
-
-	count = 0;
-	while (list->next != NULL)
-	{
-		list = list->next;
-		count++;
-	}
-	return (count);
+	list_a = sa_sb(list_a);
+	list_b = sa_sb(list_b);
 }
-

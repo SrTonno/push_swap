@@ -1,41 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_struck.c                                     :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/08 18:29:05 by tvillare          #+#    #+#             */
-/*   Updated: 2022/12/14 12:48:08 by tvillare         ###   ########.fr       */
+/*   Created: 2022/12/13 16:53:08 by tvillare          #+#    #+#             */
+/*   Updated: 2022/12/13 18:19:17 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-t_order	*to_next(t_order *list_a, int out, int position) //pruebas
+void	free_map(char **map)
 {
-	list_a->next = create_new_block(list_a, out, position);
-	list_a = list_a->next;
-	return (list_a);
-}
-
-t_order	*find_end_list(t_order *list)
-{
-	while (list->next != NULL)
-		list = list->next;
-	return (list);
-}
-
-int	ft_struclen(t_order *list)
-{
-	int count;
+	int	count;
 
 	count = 0;
-	while (list->next != NULL)
+	while (map[count] != '\0')
 	{
-		list = list->next;
-		count++;
+		free(map[count++]);
 	}
-	return (count);
-}
+	free(map);
 
+}
