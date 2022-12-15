@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:42:37 by tvillare          #+#    #+#             */
-/*   Updated: 2022/12/15 11:52:02 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/12/15 18:44:39 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ void		free_map(char **map);
 t_order		*ft_sa(t_order *list_a);
 t_order		*ft_sb(t_order *list_b);
 void		ft_ss(t_order *list_a, t_order *list_b);
-t_order		*rra(t_order *list_a);
-t_order		*rrb(t_order *list_b);
+t_order		*ft_rra(t_order *list_a);
+t_order		*ft_rrb(t_order *list_b);
 void		ft_rrr(t_order *list_a, t_order *list_b);
 t_order		*ft_ra(t_order *list_a);
 t_order		*ft_rb(t_order *list_b);
@@ -47,11 +47,18 @@ void		ft_rr(t_order *list_a, t_order *list_b);
 void		ft_pa(t_order *list_b, t_order *list_a);
 void		ft_pb(t_order *list_b, t_order *list_a);
 
-/// utils strcu
+/// utils struct
 int			ft_struclen(t_order *list);
 t_order		*find_end_list(t_order *list_a);
 t_order		*find_first_list(t_order *list);
 t_order		*to_next(t_order *list_a, int out, int position);
-int			check_uniq_number(t_order *list, int num);
+int			check_uniq_number_dst(t_order *list, int num);
+int			check_order_struck_asd(t_order *list);
+int			check_order_struck_dst(t_order *list);
+int			find_min_value(t_order *list);
+t_order		*push_min_to_b(t_order *list_a, t_order *list_b);
+//Argoridmos
+void		small_list(t_order *list_a);
+t_order		*five_number(t_order *list_a);
 
 #endif

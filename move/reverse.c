@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 11:07:10 by tvillare          #+#    #+#             */
-/*   Updated: 2022/12/15 11:14:45 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/12/15 15:51:40 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,14 @@ static t_order	*reverse(t_order *list)
 	return (find);
 }
 
-t_order	*rra(t_order *list_a)
+t_order	*ft_rra(t_order *list_a)
 {
 	list_a = reverse(list_a);
 	ft_printf("rra\n");
 	return(list_a);
 }
 
-t_order	*rrb(t_order *list_b)
+t_order	*ft_rrb(t_order *list_b)
 {
 	list_b = reverse(list_b);
 	ft_printf("rrb\n");
