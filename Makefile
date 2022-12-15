@@ -3,7 +3,7 @@
 ###############################################################################
 CFILES		= \
 			main.c create_list.c utils.c utils_struck.c move/rotate.c \
-			move/sa_sb_ss.c move/push.c
+			move/swap.c move/push.c move/reverse.c
 OBJS	=	${CFILES:.c=.o}
 
 CLIBFT		= \
@@ -33,7 +33,6 @@ CPRINTF		= \
 			libft/printf/ft_options/ft_di.c libft/printf/ft_options/ft_u.c \
 			libft/printf/ft_options/ft_s.c libft/printf/ft_options/ft_x.c \
 			libft/printf/ft_options/ft_p.c \
-			\
 
 OPRINTF	=	${CPRINTF:.c=.o}
 

@@ -6,17 +6,17 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 18:29:05 by tvillare          #+#    #+#             */
-/*   Updated: 2022/12/14 12:48:08 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/12/15 11:53:19 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_order	*to_next(t_order *list_a, int out, int position) //pruebas
+t_order	*to_next(t_order *list, int out, int position) //pruebas
 {
-	list_a->next = create_new_block(list_a, out, position);
-	list_a = list_a->next;
-	return (list_a);
+	list->next = create_new_block(list, out, position);
+	list = list->next;
+	return (list);
 }
 
 t_order	*find_end_list(t_order *list)
@@ -39,3 +39,29 @@ int	ft_struclen(t_order *list)
 	return (count);
 }
 
+t_order	*find_first_list(t_order *list)
+{
+	while (list->back != NULL)
+	{
+		//ft_printf("()%d-%d-%p\n", list->number, list->position, &list);
+		list = list->back;
+	}
+	return (list);
+}
+
+int	check_uniq_number(t_order *list, int num)
+{
+	if(list == NULL)
+		return (1);
+	list = find_first_list(list);
+	while (list->next != NULL)
+	{
+		if (list->number == num)
+		{
+			ft_printf("Error:\n Numoros repetios");
+			exit(0);
+		}
+		list = list->next;
+	}
+	return(1);
+}
