@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 13:14:36 by tvillare          #+#    #+#             */
-/*   Updated: 2022/12/15 18:50:37 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/12/19 17:38:52 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,25 @@ int find_min_value(t_order *list)
 	//ft_printf("x%dx", min);
 	return (min);
 
+}
+
+int find_max_value(t_order *list)
+{
+	int	len;
+	int	max;
+	int	i;
+
+	i = 0;
+	list = find_first_list(list);
+	len = ft_struclen(list);
+	max = list->number;
+	list = list->next;
+	while (len > i++)
+	{
+		if (max < list->number)
+			max = list->number;
+		list = list->next;
+	}
+	//ft_printf("x%dx", min);
+	return (max);
 }

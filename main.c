@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:44:34 by tvillare          #+#    #+#             */
-/*   Updated: 2022/12/17 17:58:41 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/12/19 17:17:30 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ int main(int argc, char **argv)
 	//small_list(list_a);
 	//list_a = find_first_list(list_a);
 	len = ft_struclen(list_a);
-	if (len < 3)
+	/*if (len < 3)
 		small_list(list_a);
 	else if (len < 5)
-		list_a = five_number(list_a);
+		list_a = five_number(list_a);*/
 	list_a = find_first_list(list_a);
 	/*ft_printf("////////////\n");
 	while (list_a->next != NULL)

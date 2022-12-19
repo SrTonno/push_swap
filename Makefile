@@ -4,7 +4,8 @@
 CFILES		= \
 			main.c create_list.c utils/utils.c utils/utils_struck.c utils/utils_sort.c \
 			utils/utils_struck2.c move/rotate.c move/swap.c move/push.c move/reverse.c \
-			sort/small_list.c sort/5_numbers.c
+			sort/small_list.c sort/5_numbers.c utils/created_index.c utils/move_block_b.c \
+			sort/100_numbers.c
 OBJS	=	${CFILES:.c=.o}
 
 CLIBFT		= \

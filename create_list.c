@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 17:13:30 by tvillare          #+#    #+#             */
-/*   Updated: 2022/12/15 12:33:38 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/12/19 14:22:03 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_order	*create_new_block(t_order *list, int out, int position)
 	tmp = ft_calloc(1, sizeof(t_order));
 	tmp->number = out;
 	tmp->position = position;
+	tmp->index = -1;
 	tmp->back = list;
 	list->next = tmp;
 	return (tmp);
@@ -31,6 +32,7 @@ static t_order	*primal_list(int out)
 
 	tmp = ft_calloc(1, sizeof(t_order));
 	tmp->number = out;
+	tmp->index = -1;
 	tmp->position = 0;
 	tmp->back = NULL;
 	return (tmp);

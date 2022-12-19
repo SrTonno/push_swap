@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:42:37 by tvillare          #+#    #+#             */
-/*   Updated: 2022/12/17 18:09:01 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/12/19 17:39:24 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef struct s_order
 {
 	int				number;
 	int				position;
+	int				index;
 	struct s_order	*next;
 	struct s_order	*back;
 }				t_order;
@@ -57,6 +58,9 @@ int			check_order_struck_asd(t_order *list);
 int			check_order_struck_dst(t_order *list);
 int			find_min_value(t_order *list);
 t_order		*push_min_to_b(t_order *list_a, t_order *list_b);
+void		created_index(t_order *list);
+t_order		*move_block_b(t_order *list_a, t_order *list_b, int min, int max);
+int find_max_value(t_order *list);
 //Argoridmos
 void		small_list(t_order *list_a);
 t_order		*five_number(t_order *list_a);
