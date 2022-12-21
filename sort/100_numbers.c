@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 18:34:36 by tvillare          #+#    #+#             */
-/*   Updated: 2022/12/21 16:01:32 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/12/21 16:27:44 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,21 +31,21 @@ t_order	*hundred_number(t_order *list_a)
 
 	max = 15;
 	min = 12;
-	i = 1;
-	//while (i--)
-	//{
+	i = 0;
+	list_a = find_first_list(list_a);
+	created_index(list_a);
+	while (4 > i++)
+	{
 		list_b = ft_calloc(1, sizeof(t_order));
 		list_a = move_block_b(list_a, list_b, min, max);
-		if (i != 4)
-			min_to_top (list_a, min);
-		//return_to_a(list_a, list_b, 4);
-		if (min != 0)
-		{
-			max -= 4;
-			min -= 4;
-		}
-	//}
-	min_to_top (list_a, -1);
+		if(i != 1)
+			min_to_top(list_a, max);
+		return_to_a(list_a, list_b, 4);
+		print_cosas(list_a);
+			max = min - 1;
+			min = max - 3;
+	}
+	min_to_top(list_a, -1);
 	return (list_a);
 }
 

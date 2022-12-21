@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 16:41:26 by tvillare          #+#    #+#             */
-/*   Updated: 2022/12/21 15:29:52 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/12/21 17:44:17 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,13 +59,43 @@ t_order	*push_min_to_b(t_order *list_a, t_order *list_b)
 	return (tmp);
 }
 
+int	top_or_under(t_order *list, int num)
+{
+	int	top;
+	int	under;
+
+	top = 0;
+	under = 0;
+	list = find_first_list(list);
+	while (list->next != NULL && num != list->index)
+	{
+		list = list->next;
+		top++;
+	}
+	list = find_end_list(list);
+	while (list->back != NULL && num != list->index)
+	{
+		list = list->back;
+		under++;
+	}
+	if (top > under + 1)
+		return (0);
+	return (1);
+
+
+}
 t_order	*min_to_top (t_order *list, int max)
 {
+	int	mode;
 	list = find_first_list(list);
 	max += 1;
+	mode = top_or_under(list, max);
 	while (list->index != max)
 	{
-		list = ft_rra(list);
+		if (mode == 1)
+			list = ft_ra(list);
+		else
+			list = ft_rra(list);
 		list = find_first_list(list);
 	}
 	return (list);

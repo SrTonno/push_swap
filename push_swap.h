@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:42:37 by tvillare          #+#    #+#             */
-/*   Updated: 2022/12/21 15:53:25 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/12/21 17:45:20 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,11 +63,15 @@ t_order		*move_block_b(t_order *list_a, t_order *list_b, int min, int max);
 int			find_max_value(t_order *list);
 void		return_to_a(t_order *list_a, t_order *list_b, int count);
 t_order		*min_to_top (t_order *list, int max);
+int			top_or_under(t_order *list, int num);
 
 //Argoridmos
 void		small_list(t_order *list_a);
 t_order		*five_number(t_order *list_a);
 t_order		*hundred_number(t_order *list_a);
 
+
+
+void print_cosas(t_order *list_a);
 
 #endif
