@@ -6,13 +6,13 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 11:07:10 by tvillare          #+#    #+#             */
-/*   Updated: 2022/12/15 15:51:40 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/12/20 19:17:28 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static t_order	*reverse(t_order *list)
+static t_order	*reverse(t_order *list) //revisar funcion
 {
 	t_order	*find;
 	t_order	*aux;

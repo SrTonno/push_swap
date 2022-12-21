@@ -6,33 +6,36 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 12:35:35 by tvillare          #+#    #+#             */
-/*   Updated: 2022/12/19 15:36:48 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/12/20 13:01:01 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static int	search_min(t_order *list)
+static int	search_min(t_order *list, int len)
 {
 	int	min;
 	int	i;
 
 	i = 0;
 	list = find_first_list(list);
-	while (list->next != NULL)
+	while (len > i++)
 	{
-		if (list->index != -1)
+		if (list->index == -1)
 		{
 			min = list->number;
 			break ;
 		}
-		list = list->next;
+		if ( list->next != NULL)
+			list = list->next;
 	}
-	while (list->next != NULL)
+	//list = list->next;
+	while (len >= i++)
 	{
-		if (min > list->number && list->index != -1)
+		if ( list->next != NULL)
+			list = list->next;
+		if (min > list->number && list->index == -1)
 			min = list->number;
-		list = list->next;
 	}
 	return (min);
 
@@ -42,22 +45,26 @@ void	created_index(t_order *list)
 	int	min;
 	int	len;
 	int	index;
+	t_header	header;
 	int	i;
 	int	j;
 
-	j = 0;
 	i = 0;
-	len = ft_struclen(list) + 1;
 	index = 0;
-	while (len > i++)
+	len = ft_struclen(list);
+	header.first = find_first_list(list);
+	while (len >= i++)
 	{
-
-		list = find_first_list(list);
-		min = search_min(list);
+		list = header.first;
+		min = search_min(list, len);
+		j = 0;
 		while (len >= j++)
 		{
 			if (list->number == min)
+			{
 				list->index = index++;
+				//ft_printf("$/$%d-%d\n", list->number, list->index);
+			}
 			list = list->next;
 		}
 	}

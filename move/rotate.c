@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 18:53:28 by tvillare          #+#    #+#             */
-/*   Updated: 2022/12/15 11:18:00 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/12/20 19:12:50 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ t_order	*ft_ra(t_order *list_a)
 t_order	*ft_rb(t_order *list_b)
 {
 	list_b = rotate(list_b);
-	ft_printf("ra\n");
+	ft_printf("rb\n");
 	return (list_b);
 }
 

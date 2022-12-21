@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 12:20:19 by tvillare          #+#    #+#             */
-/*   Updated: 2022/12/15 19:03:22 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/12/20 16:35:03 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,15 @@ static void	push(t_order *org, t_order *dst)
 	if (org == NULL)
 		return ;
 	org = find_first_list(org);
-	tmp = org;
-	org = org->next;
-	org->back = NULL;
+	if (org->next != NULL)
+	{
+		tmp = org;
+		org = org->next;
+		org->back = NULL;
+
+	}
+	else
+		tmp = org;
 	dst = find_first_list(dst);
 	tmp->next = dst;
 	dst->back = tmp;

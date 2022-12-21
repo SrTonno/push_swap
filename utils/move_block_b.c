@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 16:50:34 by tvillare          #+#    #+#             */
-/*   Updated: 2022/12/19 18:34:58 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/12/21 15:10:33 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,19 @@
 
 static t_order	*move_to_top_a(t_order *list_a, int min, int max, int mode)
 {
+	int	i;
+
+	i = 0;
 	list_a = find_first_list(list_a);
-	while (min > list_a->index && max < list_a->index)
+	while (i == 0)
 	{
 		if (mode == 0)
-			list_a =ft_ra (list_a);
+			list_a = ft_ra (list_a);
 		else
 			list_a = ft_rra (list_a);
 		list_a = find_first_list(list_a);
+		if (min <= list_a->index && max >= list_a->index)
+			i = 1;
 	}
 	return (list_a);
 }
@@ -34,7 +39,7 @@ static int	search_top_or_under(t_order *list, int min, int max)
 	int	len;
 
 	list = find_first_list(list);
-	len = ft_struclen(list) + 1;
+	len = ft_struclen(list);
 	top = 0;
 	under = 0;
 	while (len > top)
@@ -44,7 +49,7 @@ static int	search_top_or_under(t_order *list, int min, int max)
 		list = list->next;
 		top++;
 	}
-	list = find_first_list(list);
+	list = find_end_list(list);
 	while (len > under)
 	{
 		if (min <= list->index && max >= list->index)
@@ -59,18 +64,30 @@ static int	search_top_or_under(t_order *list, int min, int max)
 
 t_order	*move_block_b(t_order *list_a, t_order *list_b, int min, int max)
 {
-	int	check;
-	int	count;
-	int	total;
+	int		check;
+	int		count;
+	int		total;
+	t_order	*aux;
 
 	count = 0;
 	total = max - min;
-	while (total > count++)
+	while (4 > count++)
 	{
-		check = search_top_or_under(list_a, 80, 100);
-		list_a = move_to_top_a(list_a, 80, 100, check);
+		check = search_top_or_under(list_a, min, max);
+		list_a = move_to_top_a(list_a, min, max, check);
+		//ft_printf("$a$%d/%d\n", list_a->number, list_a->index);
 		list_a = list_a->next;
 		ft_pb(list_a, list_b);
+		if (count == 1)
+		{
+			aux = list_b;
+			free (aux);
+			list_b = list_b->back;
+			list_b->next = NULL;
+		}
+		else
+			list_b = list_b->back;
+		//ft_printf("$b$%d/%d\n", list_b->number, list_b->index);
 	}
 	return (list_a);
 }
