@@ -6,23 +6,19 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 16:41:26 by tvillare          #+#    #+#             */
-/*   Updated: 2022/12/21 17:44:17 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/12/27 19:02:08 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 //struct
 //struct
-static t_order	*up_to_min(t_order *list, int min, int i, int len)
+static t_order	*up_to_min(t_order *list, int min, int i)
 {
 	list = find_first_list(list);
 	while (list->number != min)
 	{
-		if (i == 2)
-			list = ft_sa(list);
-		else if (len < i)
-			list = ft_rra(list);
-		else if (len / 2 < i)
+		if (2 < i)
 			list = ft_rra(list);
 		else
 			list = ft_ra(list);
@@ -46,7 +42,7 @@ t_order	*push_min_to_b(t_order *list_a, t_order *list_b)
 	{
 		if (list_a->number == min)
 		{
-			list_a = up_to_min(list_a, min, i, len);
+			list_a = up_to_min(list_a, min, i);
 			//if (list_a->next != NULL)
 				tmp = list_a->next;
 			/*else

@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 12:35:35 by tvillare          #+#    #+#             */
-/*   Updated: 2022/12/20 13:01:01 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/12/27 18:10:42 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ static int	search_min(t_order *list, int len)
 	int	i;
 
 	i = 0;
+	//(void)len;
 	list = find_first_list(list);
 	while (len > i++)
 	{
@@ -26,7 +27,7 @@ static int	search_min(t_order *list, int len)
 			min = list->number;
 			break ;
 		}
-		if ( list->next != NULL)
+		if (list->next != NULL)
 			list = list->next;
 	}
 	//list = list->next;

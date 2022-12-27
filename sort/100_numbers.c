@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 18:34:36 by tvillare          #+#    #+#             */
-/*   Updated: 2022/12/21 16:27:44 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/12/27 18:11:16 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ t_order	*hundred_number(t_order *list_a)
 	max = 15;
 	min = 12;
 	i = 0;
+	(void)list_b;
 	list_a = find_first_list(list_a);
 	created_index(list_a);
 	while (4 > i++)
@@ -42,8 +43,9 @@ t_order	*hundred_number(t_order *list_a)
 			min_to_top(list_a, max);
 		return_to_a(list_a, list_b, 4);
 		print_cosas(list_a);
-			max = min - 1;
-			min = max - 3;
+		max = min - 1;
+		min = max - 3;
+		ft_printf("(%d-%d)", min, max);
 	}
 	min_to_top(list_a, -1);
 	return (list_a);
