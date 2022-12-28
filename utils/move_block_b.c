@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 16:50:34 by tvillare          #+#    #+#             */
-/*   Updated: 2022/12/21 19:19:16 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/12/28 14:28:36 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static t_order	*move_to_top_a(t_order *list_a, int min, int max, int mode)
 		if (mode == 0)
 		{
 			list_a = ft_ra (list_a);
-			ft_printf("a");
+			//ft_printf("a");
 		}
 		else
 			list_a = ft_rra (list_a);
@@ -69,12 +69,12 @@ t_order	*move_block_b(t_order *list_a, t_order *list_b, int min, int max)
 {
 	int		check;
 	int		count;
-	//int		total;
+	int		total;
 	t_order	*aux;
 
 	count = 0;
-	//total = max - min;
-	while (4 > count++)
+	total = (max - min) + 1;
+	while (total > count++)
 	{
 		check = search_top_or_under(list_a, min, max);
 		list_a = move_to_top_a(list_a, min, max, check);
