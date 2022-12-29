@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:42:37 by tvillare          #+#    #+#             */
-/*   Updated: 2022/12/21 18:54:58 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/12/29 19:24:42 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,9 @@ void		return_to_a(t_order *list_a, t_order *list_b, int count);
 t_order		*min_to_top (t_order *list, int max);
 int			top_or_under(t_order *list, int num);
 void		struct_free(t_order *list);
+
+t_order		*psorder(t_order *list);
+void		total_return(t_order *org, t_order *dst, int top);
 
 //Argoridmos
 void		small_list(t_order *list_a);

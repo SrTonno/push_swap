@@ -6,18 +6,16 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 18:34:36 by tvillare          #+#    #+#             */
-/*   Updated: 2022/12/28 17:27:14 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/12/29 19:52:38 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-1-Calcular los x% numeros mas grandes o usar indeces
-2-Pasar los numeros mas grandes a list_b
-3-Debolber los numeros a list_a(si el numero es el mas grande de lis_b solo hacer pa, pero si es el mas pequeño hacer pa y ra(poner el numero al final))
-4-repetir los pasos 1 al 3.
-5-Comprobar que este bien ordenado
+1.-Pasar x% a b y ir Pseudoornenado los datos
+2.-Ordenar ultimos numeros
+3.-Pasar los nummeros ordenados de mañor a menor
 */
-//https://github.com/AdrianWR/push_swap
+//https://gitlab.com/42cursus-wetieven/23-push-swap
 
 //https://www.ugr.es/~jsalinas/Aleatorios.htm
 #include "../push_swap.h"
@@ -48,34 +46,43 @@ t_order	*hundred_number(t_order *list_a)
 	t_order *list_b;
 	int	max;
 	int	min;
+	int	top;
 	int	i;
 	int	interval;
 
 	created_index(list_a);
-	max = max_index(list_a);
-	interval = max / 4;
-	min = (max - interval) + 1;
+	top = max_index(list_a);
+	interval = (top / 5) + 1;
+	min = 0;
+	max = min + interval;
+	//min = (max - interval) + 1;
 	//ft_printf("/FIN/max = %d, min = %d, intelval= %d, max-min = %d\n", max, min, interval, (max - min));
 	i = 0;
 	(void)list_b;
 	list_a = find_first_list(list_a);
-	while (4 > i++)
+	list_b = ft_calloc(1, sizeof(t_order));
+	while (5 > i++)
 	{
 		//ft_printf("/principio/max = %d, min = %d, intelval= %d, max-min = %d\n", max, min, interval, (max - min));
-		list_b = ft_calloc(1, sizeof(t_order));
 		list_a = move_block_b(list_a, list_b, min, max);
-		if(i != 1)
-			min_to_top(list_a, max);
-		return_to_a(list_a, list_b, interval);
-		//print_cosas(list_a);
-		max = min - 1;
-		min = max - interval;
-		if (0 > min)
-			min = 0;
-		interval = (max - min) + 1;
+		min = max + 1;
+		max = min + interval;
+		if (top - 5 <= max)
+			max = top - 5;
+		list_b = find_first_list(list_b);
+			//print_cosas(list_b);
+		//ft_printf("-%d-", list_b->number);
 		//ft_printf("/FIN/max = %d, min = %d, intelval= %d, max-min = %d\n", max, min, interval, (max - min));
 	}
-	min_to_top(list_a, -1);
+	//min_to_top(list_a, -1);
+	//print_cosas(list_b);
+	list_a = five_number(list_a);
+	total_return(list_b, list_a, top - 5);
+	//ft_printf("-----------FIN------\n");
+	list_a = find_first_list(list_a);
+	//print_cosas(list_a);
+
+	//print_cosas(list_b);
 	return (list_a);
 }
 
