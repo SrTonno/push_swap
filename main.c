@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:44:34 by tvillare          #+#    #+#             */
-/*   Updated: 2022/12/29 13:38:53 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/12/30 12:05:42 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,17 @@ int main(int argc, char **argv)
 
 	if (argc < 2)
 	{
-		ft_printf("Error:\n faltan argumentos");
+		ft_printf("Error\n faltan argumentos");
 		return (0);
 	}
 	list_a = NULL;
 	i = 0;
 	list_a = create_list(argv, list_a);
+	/*if (ft_struclen(list_a) <= 1)
+	{
+		ft_printf("Error\n faltan argumentos");
+		return (0);
+	}*/
 	//list_a = find_first_list(list_a);
 	len = ft_struclen(list_a);
 	if (len < 3)

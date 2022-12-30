@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 18:34:36 by tvillare          #+#    #+#             */
-/*   Updated: 2022/12/29 19:52:38 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/12/30 12:05:11 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ t_order	*hundred_number(t_order *list_a)
 	int	i;
 	int	interval;
 
+	if (check_order_struck_asd(list_a) == 1)
+		return (list_a);
 	created_index(list_a);
 	top = max_index(list_a);
 	interval = (top / 5) + 1;
@@ -83,6 +85,7 @@ t_order	*hundred_number(t_order *list_a)
 	//print_cosas(list_a);
 
 	//print_cosas(list_b);
+	//ft_printf("()%d|\n", check_order_struck_asd(list_a));
 	return (list_a);
 }
 

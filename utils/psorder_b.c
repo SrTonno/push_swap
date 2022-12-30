@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 17:43:50 by tvillare          #+#    #+#             */
-/*   Updated: 2022/12/29 19:46:55 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/12/30 11:27:01 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,10 @@ t_order	*psorder(t_order *list)
 	list = find_first_list(list);
 	aux = find_end_list(list);
 	if (list->index < aux->index)
-		list = ft_rra(list);
-	else if (list->index < list->next->index)
-		list = ft_sa(list);
+		list = ft_rrb(list);
+	else if (list->index < list->next->index
+	&& ft_struclen(list) > 1)
+		list = ft_sb(list);
 	return (list);
 }
 
@@ -55,17 +56,16 @@ void	total_return(t_order *org, t_order *dst, int top)
 		post = num_position(org, top);
 		if (top / 2 > post && top != 0)
 			while (org->index != top)
-				org = ft_ra(org);
+				org = ft_rb(org);
 		else
 			while (org->index != top)
-				org = ft_rra(org);
+				org = ft_rrb(org);
 		tmp = org->next;
-		ft_pb(org, dst);
+		ft_pa(org, dst);
 		org = tmp;
-
 		top--;
 	}
-	ft_pb(org, dst);
+	ft_pa(org, dst);
 	dst = find_first_list(dst);
 	//print_cosas(dst);
 }
