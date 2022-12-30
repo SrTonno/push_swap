@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 16:50:34 by tvillare          #+#    #+#             */
-/*   Updated: 2022/12/29 18:33:16 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/12/30 14:47:16 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,8 +92,14 @@ t_order	*move_block_b(t_order *list_a, t_order *list_b, int min, int max)
 		else
 			list_b = list_b->back;
 		if (count != 1)
-			list_b = psorder(list_b);
+			list_b = psorder(list_b, max);
 		//ft_printf("$b$%d/%d\n", list_b->number, list_b->index);
 	}
+	aux = find_end_list(list_b);
+	/*while (aux->index <= max / 3)
+	{
+		list_b = ft_rb(list_b);
+		aux = find_end_list(list_b);
+	}*/
 	return (list_a);
 }

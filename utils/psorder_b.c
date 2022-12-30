@@ -6,23 +6,28 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 17:43:50 by tvillare          #+#    #+#             */
-/*   Updated: 2022/12/30 11:27:01 by tvillare         ###   ########.fr       */
+/*   Updated: 2022/12/30 16:33:58 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_order	*psorder(t_order *list)
+t_order	*psorder(t_order *list, int max)
 {
 	t_order	*aux;
 
+	(void)max;
 	list = find_first_list(list);
 	aux = find_end_list(list);
-	if (list->index < aux->index)
-		list = ft_rrb(list);
-	else if (list->index < list->next->index
+	/*if (list->index < aux->index)
+	//if (list->index > max / 3)
+		list = ft_rrb(list);*/
+	if (list->index > aux->index)
+		list = ft_rb(list);
+	if (list->index < list->next->index
 	&& ft_struclen(list) > 1)
 		list = ft_sb(list);
+
 	return (list);
 }
 
