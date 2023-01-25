@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 18:34:36 by tvillare          #+#    #+#             */
-/*   Updated: 2022/12/30 12:05:11 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/01/18 12:28:58 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ t_order	*hundred_number(t_order *list_a)
 		return (list_a);
 	created_index(list_a);
 	top = max_index(list_a);
-	interval = (top / 5) + 1;
+	interval = top; //(top / 5) + 1;
 	min = 0;
 	max = min + interval;
 	//min = (max - interval) + 1;
@@ -63,23 +63,24 @@ t_order	*hundred_number(t_order *list_a)
 	(void)list_b;
 	list_a = find_first_list(list_a);
 	list_b = ft_calloc(1, sizeof(t_order));
-	while (5 > i++)
-	{
+	//while (1 > i++)
+	//{
 		//ft_printf("/principio/max = %d, min = %d, intelval= %d, max-min = %d\n", max, min, interval, (max - min));
-		list_a = move_block_b(list_a, list_b, min, max);
+		list_a = move_block_b(list_a, list_b, min, max - 3);
 		min = max + 1;
 		max = min + interval;
-		if (top - 5 <= max)
-			max = top - 5;
+		/*if (top - 5 <= max)
+			max = top - 5;*/
 		list_b = find_first_list(list_b);
 			//print_cosas(list_b);
 		//ft_printf("-%d-", list_b->number);
 		//ft_printf("/FIN/max = %d, min = %d, intelval= %d, max-min = %d\n", max, min, interval, (max - min));
-	}
+	//}
 	//min_to_top(list_a, -1);
 	//print_cosas(list_b);
-	list_a = five_number(list_a);
-	total_return(list_b, list_a, top - 5);
+
+	small_list(list_a);
+	total_return(list_b, list_a, top - 3);
 	//ft_printf("-----------FIN------\n");
 	list_a = find_first_list(list_a);
 	//print_cosas(list_a);
