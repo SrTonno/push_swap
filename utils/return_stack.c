@@ -6,12 +6,12 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 19:17:05 by tvillare          #+#    #+#             */
-/*   Updated: 2022/12/28 12:41:35 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/01/27 13:59:48 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
+/*
 static int	find_to_top(t_order *list_b, int min, int max)
 {
 	int	count;
@@ -82,3 +82,4 @@ void return_to_a(t_order *list_a, t_order *list_b, int count)
 			list_a = ft_ra(list_a);
 	}
 }
+*/

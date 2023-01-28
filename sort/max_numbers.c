@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   100_numbers.c                                      :+:      :+:    :+:   */
+/*   max_numbers.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 18:34:36 by tvillare          #+#    #+#             */
-/*   Updated: 2023/01/28 13:12:05 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/01/28 13:23:07 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static int	max_index(t_order *list)
 */
 
 
-t_order	*hundred_number(t_order *list_a, t_print *mob)
+t_order	*max_number(t_order *list_a, t_print *mob)
 {
 	t_order *list_b;
 	int	limits[2];
@@ -62,7 +62,7 @@ t_order	*hundred_number(t_order *list_a, t_print *mob)
 		return (list_a);
 	created_index(list_a);
 	top = max_index(list_a);
-	interval = (top / 6) + 1;
+	interval = (top / 14) + 1;
 	limits[0] = 0;
 	limits[1] = limits[0] + interval;
 	//limits[0] = (limits[1] - interval) + 1;
@@ -71,7 +71,7 @@ t_order	*hundred_number(t_order *list_a, t_print *mob)
 	(void)list_b;
 	list_a = find_first_list(list_a);
 	list_b = ft_calloc(1, sizeof(t_order));
-	while (6 > i++)
+	while (14 > i++)
 	{
 		//ft_printf("/principio/limits[1] = %d, limits[0] = %d, intelval= %d, limits[1]-limits[0] = %d\n", limits[1], limits[0], interval, (limits[1] - limits[0]));
 		list_a = move_block_b(list_a, list_b, limits, mob);
@@ -96,3 +96,4 @@ t_order	*hundred_number(t_order *list_a, t_print *mob)
 	//ft_printf("()%d|\n", check_order_struck_asd(list_a));
 	return (list_a);
 }
+

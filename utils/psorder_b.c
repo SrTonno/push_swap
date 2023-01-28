@@ -6,13 +6,13 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 17:43:50 by tvillare          #+#    #+#             */
-/*   Updated: 2022/12/30 16:33:58 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/01/27 14:04:43 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_order	*psorder(t_order *list, int max)
+t_order	*psorder(t_order *list, int max, t_print *mob)
 {
 	t_order	*aux;
 
@@ -23,10 +23,10 @@ t_order	*psorder(t_order *list, int max)
 	//if (list->index > max / 3)
 		list = ft_rrb(list);*/
 	if (list->index > aux->index)
-		list = ft_rb(list);
+		list = ft_rb(list, mob);
 	if (list->index < list->next->index
 	&& ft_struclen(list) > 1)
-		list = ft_sb(list);
+		list = ft_sb(list, mob);
 
 	return (list);
 }
@@ -49,7 +49,7 @@ static int	num_position(t_order *list, int num)
 	return (i);
 }
 
-void	total_return(t_order *org, t_order *dst, int top)
+void	total_return(t_order *org, t_order *dst, int top, t_print *mob)
 {
 	int	post;
 	t_order	*tmp;
@@ -61,16 +61,16 @@ void	total_return(t_order *org, t_order *dst, int top)
 		post = num_position(org, top);
 		if (top / 2 > post && top != 0)
 			while (org->index != top)
-				org = ft_rb(org);
+				org = ft_rb(org, mob);
 		else
 			while (org->index != top)
-				org = ft_rrb(org);
+				org = ft_rrb(org, mob);
 		tmp = org->next;
-		ft_pa(org, dst);
+		ft_pa(org, dst, mob);
 		org = tmp;
 		top--;
 	}
-	ft_pa(org, dst);
+	ft_pa(org, dst, mob);
 	dst = find_first_list(dst);
 	//print_cosas(dst);
 }

@@ -6,7 +6,7 @@ CFILES		= \
 			utils/utils_struck2.c move/rotate.c move/swap.c move/push.c move/reverse.c \
 			sort/small_list.c sort/5_numbers.c utils/created_index.c utils/move_block_b.c \
 			sort/100_numbers.c utils/return_stack.c utils/struct_free.c \
-			utils/psorder_b.c
+			sort/max_numbers.c utils/psorder_b.c
 OBJS	=	${CFILES:.c=.o}
 
 CLIBFT		= \
@@ -76,8 +76,18 @@ $(NLIBRARY): $(LIBFT)
 	@$(AR) $(ARFLAGS) $@ $^
 	@echo "Created '${NLIBRARY}'."
 
+git: fclean
+	@echo "\t>>Push To Git<<"
+	@git add . ;
+	@read -p "Name the commit (One Word): " commit ;\
+	git commit -m "$$commit" ;\
+	git push origin master ;
+
+normi:
+	@norminette -R CheckForbiddenSourceHeader | grep Error!
+
 .c.o:
-		 @${CC} ${CFLAGS} -Imlx -c $< -o ${<:.c=.o}
+		@${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 ###############################################################################
 clean:
@@ -94,8 +104,10 @@ help:
 	@echo "Options of MakeFile:"
 	@echo "\tDeault: Created '${NAME}'"
 	@echo "\tclean: Delete '.o'."
-	@echo "\tfclean: Delete'.o', '${NLIBRARY}' and '${NAME}'"
+	@echo "\tfclean: Delete'.o', '${NLIBRARY}'"
 	@echo "\tre: Delete '.o', '${NLIBRARY}', '${NAME}' and creates '${NAME}'"
+	@echo "\tgit: Push to git."
+	@echo "\tnormi: Check file with Error the norminette."
 	@echo "MakeFile by tvillare."
 
 .PHONY = all clean fclean re help
