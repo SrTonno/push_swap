@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:42:37 by tvillare          #+#    #+#             */
-/*   Updated: 2023/01/27 17:01:53 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/01/29 19:00:01 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ t_order		*ft_ra(t_order *list_a, t_print *mob);
 t_order		*ft_rb(t_order *list_b, t_print *mob);
 void		ft_rr(t_order *list_a, t_order *list_b);
 void		ft_pa(t_order *list_b, t_order *list_a, t_print *mob);
-void		ft_pb(t_order *list_b, t_order *list_a, t_print *mob);
+void		ft_pb(t_order *list_a, t_order *list_b, t_print *mob);
 
 /// utils struct
 int			ft_struclen(t_order *list);
@@ -83,6 +83,9 @@ void		small_list(t_order *list_a, t_print *mob);
 t_order		*five_number(t_order *list_a, t_print *mob);
 t_order		*hundred_number(t_order *list_a, t_print *mob);
 t_order		*max_number(t_order *list_a, t_print *mob);
+
+
+void	radix(t_order *list_a, t_print *mob);
 
 
 

@@ -6,12 +6,12 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 12:35:35 by tvillare          #+#    #+#             */
-/*   Updated: 2022/12/28 13:07:20 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/01/29 19:41:13 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
+//Solluionar Fallo de parseo de cuando el ultimo es el mas grande no le asigna un numero
 static int	search_min(t_order *list, int len)
 {
 	int	min;
@@ -69,4 +69,10 @@ void	created_index(t_order *list)
 			list = list->next;
 		}
 	}
+	ft_printf("Aaa\n");
+	//if (list->next != NULL)
+		//list = find_end_list(list);
+
+	//if (list->index == -1)
+		//list->index = index++;
 }

@@ -6,7 +6,7 @@ CFILES		= \
 			utils/utils_struck2.c move/rotate.c move/swap.c move/push.c move/reverse.c \
 			sort/small_list.c sort/5_numbers.c utils/created_index.c utils/move_block_b.c \
 			sort/100_numbers.c utils/return_stack.c utils/struct_free.c \
-			sort/max_numbers.c utils/psorder_b.c
+			sort/max_numbers.c utils/psorder_b.c utils/radix.c
 OBJS	=	${CFILES:.c=.o}
 
 CLIBFT		= \
@@ -79,7 +79,7 @@ $(NLIBRARY): $(LIBFT)
 git: fclean
 	@echo "\t>>Push To Git<<"
 	@git add . ;
-	@read -p "Name the commit (One Word): " commit ;\
+	@read -p "Name the commit: " commit ;\
 	git commit -m "$$commit" ;\
 	git push origin master ;
 

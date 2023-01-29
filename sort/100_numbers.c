@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 18:34:36 by tvillare          #+#    #+#             */
-/*   Updated: 2023/01/28 13:12:05 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/01/29 19:31:45 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ t_order	*hundred_number(t_order *list_a, t_print *mob)
 	if (check_order_struck_asd(list_a) == 1)
 		return (list_a);
 	created_index(list_a);
+	print_cosas(list_a);
 	top = max_index(list_a);
 	interval = (top / 6) + 1;
 	limits[0] = 0;

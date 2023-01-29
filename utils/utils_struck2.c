@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 16:41:26 by tvillare          #+#    #+#             */
-/*   Updated: 2023/01/27 13:21:14 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/01/29 17:52:04 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ int	top_or_under(t_order *list, int num)
 
 
 }
-t_order	*min_to_top (t_order *list, int max, t_print *mob)
+t_order	*min_to_top(t_order *list, int max, t_print *mob)
 {
 	int	mode;
 	list = find_first_list(list);

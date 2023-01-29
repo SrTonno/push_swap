@@ -6,12 +6,12 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:44:34 by tvillare          #+#    #+#             */
-/*   Updated: 2023/01/28 16:48:47 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/01/29 19:20:52 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-/*
+
 void print_cosas(t_order *list_a)
 {
 	list_a = find_first_list(list_a);
@@ -24,7 +24,7 @@ void print_cosas(t_order *list_a)
 	ft_printf("$/$%d/%d\n", list_a->number, list_a->index);
 	ft_printf("////////////\n");
 }
-*/
+
 static int	check_doble(t_print *mob)
 {
 	if (mob->next == NULL)
@@ -135,6 +135,8 @@ int main(int argc, char **argv)
 		list_a = hundred_number(list_a, mob);
 	else
 		list_a = max_number(list_a, mob);
+	//radix(list_a, mob);
+
 	/*
 	list_a = ft_ra(list_a, mob);
 	list_a = ft_sb(list_a, mob);
@@ -149,9 +151,10 @@ int main(int argc, char **argv)
 	//list_a = find_first_list(list_a);
 	//hundred_number(list_a);
 	//list_a = find_first_list(list_a);
-	//print_cosas(list_a);
+
 	if (mob->next != NULL)
 		print_list(mob);
+	//print_cosas(list_a);
 	struct_free(list_a, mob);
 	//system("leaks -q push_swap");
 }
