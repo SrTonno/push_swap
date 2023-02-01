@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 12:35:35 by tvillare          #+#    #+#             */
-/*   Updated: 2023/01/29 19:41:13 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/02/01 13:20:26 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,9 @@ static int	search_min(t_order *list, int len)
 	i = 0;
 	//(void)len;
 	list = find_first_list(list);
-	while (len > i++)
+	while (len >= i++)
 	{
+		//ft_printf()
 		if (list->index == -1)
 		{
 			min = list->number;
@@ -30,6 +31,8 @@ static int	search_min(t_order *list, int len)
 		if (list->next != NULL)
 			list = list->next;
 	}
+	//if (list->next != NULL)
+		//return (min);
 	//list = list->next;
 	while (len >= i++)
 	{
@@ -41,14 +44,15 @@ static int	search_min(t_order *list, int len)
 	return (min);
 
 }
+
 void	created_index(t_order *list)
 {
-	int	min;
-	int	len;
-	int	index;
+	int			min;
+	int			len;
+	int			index;
 	t_header	header;
-	int	i;
-	int	j;
+	int			i;
+	int			j;
 
 	i = 0;
 	index = 0;
@@ -69,7 +73,7 @@ void	created_index(t_order *list)
 			list = list->next;
 		}
 	}
-	ft_printf("Aaa\n");
+	//ft_printf("Aaa\n");
 	//if (list->next != NULL)
 		//list = find_end_list(list);
 

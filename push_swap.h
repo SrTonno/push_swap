@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:42:37 by tvillare          #+#    #+#             */
-/*   Updated: 2023/01/29 19:00:01 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/02/01 16:16:59 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,8 @@ void		struct_free(t_order *list, t_print *mob);
 t_order		*psorder(t_order *list, int max, t_print *mob);
 void		total_return(t_order *org, t_order *dst, int top, t_print *mob);
 t_print		*find_list_print(t_print *mob);
+
+void	print_list(t_print *mob);
 
 //Argoridmos
 void		two_list(t_order *list_a, t_print *mob);

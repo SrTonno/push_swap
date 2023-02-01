@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 18:29:05 by tvillare          #+#    #+#             */
-/*   Updated: 2023/01/29 19:38:58 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/02/01 15:27:11 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,21 @@ t_order	*find_end_list(t_order *list)
 	return (list);
 }
 
+t_order	*find_first_list(t_order *list)
+{
+	//if (list == NULL)
+		//return (NULL);
+	//ft_printf("Start BACK%s\n", list->back);
+	while (list->back != NULL)
+	{
+
+		//ft_printf("()%d-%d-%s\n", list->number, list->index, list->back);
+		list = list->back;
+	}
+	//ft_printf("FIN BACK\n");
+	return (list);
+}
+
 int	ft_struclen(t_order *list)
 {
 	int count;
@@ -40,16 +55,6 @@ int	ft_struclen(t_order *list)
 		count++;
 	}
 	return (count);
-}
-
-t_order	*find_first_list(t_order *list)
-{
-	while (list->back != NULL)
-	{
-		//ft_printf("()%d-%d-%p\n", list->number, list->position, &list);
-		list = list->back;
-	}
-	return (list);
 }
 
 int	check_uniq_number(t_order *list, int num)

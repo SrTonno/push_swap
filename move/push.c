@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 12:20:19 by tvillare          #+#    #+#             */
-/*   Updated: 2023/01/27 18:25:56 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/02/01 15:37:52 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ static void	push(t_order *org, t_order *dst)
 {
 	t_order	*tmp;
 
+	//ft_printf("ante = %s\n", dst->back);
 	if (org == NULL)
 		return ;
 	org = find_first_list(org);
@@ -24,14 +25,28 @@ static void	push(t_order *org, t_order *dst)
 		tmp = org;
 		org = org->next;
 		org->back = NULL;
-
 	}
 	else
 		tmp = org;
-	dst = find_first_list(dst);
-	tmp->next = dst;
-	dst->back = tmp;
-	dst = dst->back;
+	/*if (dst->index == -2)
+	{
+		//free(dst);
+		ft_printf("a");
+		dst = tmp;
+		dst->next = NULL;
+		dst->back = NULL;
+	}
+	else
+	{*/
+		//ft_printf("b");
+		if (dst != NULL)
+			dst = find_first_list(dst);
+		tmp->next = dst;
+		dst->back = tmp;
+		dst = dst->back;
+		tmp->back = NULL;
+	//}
+	//ft_printf("WwW%s\n", tmp->back);
 }
 
 void	ft_pa(t_order *list_b, t_order *list_a, t_print *mob)
@@ -43,6 +58,7 @@ void	ft_pa(t_order *list_b, t_order *list_a, t_print *mob)
 	tmp->id = 1;
 	tmp->next = NULL;
 	mob->next = tmp;
+	//ft_printf("ANte = %s\n", list_a->back);
 	push(list_b, list_a);
 	//ft_printf("pa\n");
 }

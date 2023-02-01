@@ -6,16 +6,12 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 19:08:58 by tvillare          #+#    #+#             */
-/*   Updated: 2023/01/29 19:26:46 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/02/01 16:13:16 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-/*
-1.- Pasar a 'b' todos los que tengan 0 en el primer bit.
-2.-Pasar de 'b' a 'a'
-3.- Repetir pasos 1 y 2 pero en el sigiente bit
-*/
+
 static int	mult_2(int num)
 {
 	int	mult;
@@ -24,46 +20,58 @@ static int	mult_2(int num)
 
 	count = 0;
 	mult = 1;
-	ft_printf("num:%d\n", num);
 	while (num > mult)
 	{
 		aux = mult;
 		mult *= 2;
-		if (mult - 1 >= num && aux < num)
-			return (count);
 		count++;
 	}
 	return (count);
 }
 
-static void	push_zero(t_order *list_a, t_order *list_b, t_print *mob, int mult)
+static t_order	*push_zero(t_order *list_a, t_order *list_b, t_print *mob, int mult)
 {
 	int	count;
 	int	max;
+	t_order *tmp;
 
 	max = ft_struclen(list_a);
-	count = 0;
+	count = 1;
 	list_a = find_first_list(list_a);
-	while (max > count++)
+	while (max + 1 >= count++)
 	{
 		if (list_a->index & mult)
+			list_a = ft_ra(list_a, mob);
+		else
+		{
+			tmp = list_a->next;
 			ft_pb(list_a, list_b, mob);
-		list_a = ft_ra(list_a, mob);
+			list_a = tmp;
+		}
 	}
+	return (list_a);
 }
 
 static void	return_zero(t_order *list_a, t_order *list_b, t_print *mob)
 {
-	int	count;
-	int	max;
+	int		count;
+	int		max;
+	t_order	*tmp;
 
+	if (check_order_struck_asd(list_a) == 1)
+		return ;
+	list_b = find_first_list(list_b);
 	max = ft_struclen(list_b);
 	count = 0;
-	list_b = find_first_list(list_b);
+	list_a = find_first_list(list_a);
 	while (max > count++)
 	{
+		if (list_b == NULL)
+			break ;
+		tmp = list_b->next;
 		ft_pa(list_b, list_a, mob);
-		list_b = ft_rb(list_b, mob);
+		list_b = tmp;
+		list_a = find_first_list(list_a);
 	}
 }
 
@@ -78,15 +86,14 @@ void	radix(t_order *list_a, t_print *mob)
 	count = 1;
 	created_index(list_a);
 	max = mult_2(ft_struclen(list_a) + 1);
-	ft_printf("%d\n", max);
-	//while(max >= count)
-	//{
-		//print_cosas(list_a);
-		list_b = malloc(1 * sizeof(t_order));
-		push_zero(list_a, list_b, mob, mult);
-		//print_cosas(list_b);
-		return_zero(list_a, list_a, mob);
+	list_b = ft_calloc(1, sizeof(t_order));
+	list_b->index = -2;
+
+	while(max >= count)
+	{
+		list_a = push_zero(list_a, list_b, mob, mult);
+		return_zero(list_a, list_b, mob);
 		count++;
 		mult *= 2;
-	//}
+	}
 }
