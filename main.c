@@ -6,10 +6,9 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:44:34 by tvillare          #+#    #+#             */
-/*   Updated: 2023/02/02 12:53:48 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/02/02 16:09:54 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "push_swap.h"
 
@@ -34,7 +33,7 @@ static void	selector_len(t_order *list_a, t_print *mob, int len)
 		two_list(list_a, mob);
 	else if (len == 2)
 		small_list(list_a, mob);
-	else if (len < 5)
+	else if (len < 7)
 		list_a = five_number(list_a, mob);
 	else if (len < 100)
 		hundred_number(list_a, mob);
@@ -57,15 +56,12 @@ int	main(int argc, char **argv)
 	mob->id = 0;
 	mob->next = NULL;
 	list_a = NULL;
-
 	list_a = create_list(argv, list_a);
 	len = ft_struclen(list_a);
-
 	created_index(list_a, len);
 	selector_len(list_a, mob, len);
 	if (mob->next != NULL)
 		print_list(mob);
-	//print_cosas(list_a);
 	struct_free(list_a, mob);
 	return (0);
 }

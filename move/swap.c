@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 18:22:36 by tvillare          #+#    #+#             */
-/*   Updated: 2023/01/28 12:11:13 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/02/02 16:50:00 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,28 +34,15 @@ static t_order	*swap(t_order *list)
 
 t_order	*ft_sa(t_order *list_a, t_print *mob)
 {
-	t_print *tmp;
-
-	mob = find_list_print(mob);
-	tmp = malloc(sizeof(t_print) * 1);
-	tmp->id = 4;
-	mob->next = tmp;
-	tmp->next = NULL;
+	add_block_mob(mob, 4);
 	list_a = swap(list_a);
-	//ft_printf("sa\n");
 	return (list_a);
 }
+
 t_order	*ft_sb(t_order *list_b, t_print *mob)
 {
-	t_print *tmp;
-
-	mob = find_list_print(mob);
-	tmp = malloc(sizeof(t_print) * 1);
-	tmp->id = -4;
-	mob->next = tmp;
-	tmp->next = NULL;
+	add_block_mob(mob, -4);
 	list_b = swap(list_b);
-	//ft_printf("sb\n");
 	return (list_b);
 }
 

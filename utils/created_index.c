@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 12:35:35 by tvillare          #+#    #+#             */
-/*   Updated: 2023/02/02 12:54:38 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/02/02 16:46:04 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,3 @@ void	created_index(t_order *list, int len)
 		}
 	}
 }
-

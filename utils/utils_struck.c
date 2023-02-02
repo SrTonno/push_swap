@@ -6,18 +6,11 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 18:29:05 by tvillare          #+#    #+#             */
-/*   Updated: 2023/02/02 13:05:52 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/02/02 16:47:48 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-t_order	*to_next(t_order *list, int out, int position) //pruebas
-{
-	list->next = create_new_block(list, out, position);
-	list = list->next;
-	return (list);
-}
 
 t_order	*find_end_list(t_order *list)
 {

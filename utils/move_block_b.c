@@ -6,13 +6,13 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 16:50:34 by tvillare          #+#    #+#             */
-/*   Updated: 2023/02/02 13:26:51 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/02/02 16:43:26 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_order	*move_to_top_a(t_order *list_a, int limits[2], int mode, t_print *mob)
+t_order	*move_top_a(t_order *list_a, int limits[2], int mode, t_print *mob)
 {
 	int	i;
 
@@ -31,11 +31,10 @@ t_order	*move_to_top_a(t_order *list_a, int limits[2], int mode, t_print *mob)
 	return (list_a);
 }
 
-int	search_top_or_under(t_order *list, int min, int max)
+int	search_top_or_under(t_order *list, int min, int max, int len)
 {
 	int	top;
 	int	under;
-	int	len;
 
 	list = find_first_list(list);
 	len = ft_struclen(list);
@@ -44,7 +43,7 @@ int	search_top_or_under(t_order *list, int min, int max)
 	while (len > top)
 	{
 		if (min <= list->index && max >= list->index)
-			break;
+			break ;
 		list = list->next;
 		top++;
 	}
@@ -72,7 +71,8 @@ static t_order	*delete_block_b(t_order *list_b)
 	return (list_b);
 }
 
-t_order	*move_block_b(t_order *list_a, t_order *list_b, int limits[2], t_print *mob)
+t_order	*move_block_b(t_order *list_a, t_order *list_b, \
+	int limits[2], t_print *mob)
 {
 	int		check;
 	int		count;
@@ -82,8 +82,9 @@ t_order	*move_block_b(t_order *list_a, t_order *list_b, int limits[2], t_print *
 	total = (limits[1] - limits[0]) + 1;
 	while (total > count++)
 	{
-		check = search_top_or_under(list_a, limits[0], limits[1]);
-		list_a = move_to_top_a(list_a, limits, check, mob);
+		check = search_top_or_under(list_a, limits[0], limits[1], \
+			ft_struclen(list_a));
+		list_a = move_top_a(list_a, limits, check, mob);
 		list_a = list_a->next;
 		ft_pb(list_a, list_b, mob);
 		if (count == 1 && ft_struclen(list_b) < 2)

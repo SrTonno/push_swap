@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 18:34:36 by tvillare          #+#    #+#             */
-/*   Updated: 2023/02/02 12:57:55 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/02/02 16:31:21 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,15 @@ static int	max_index(t_order *list)
 		list = list->next;
 	}
 	return (max);
-
 }
 
 t_order	*hundred_number(t_order *list_a, t_print *mob)
 {
-	t_order *list_b;
-	int	limits[2];
-	int	top;
-	int	i;
-	int	interval;
+	t_order	*list_b;
+	int		limits[2];
+	int		top;
+	int		i;
+	int		interval;
 
 	top = max_index(list_a);
 	interval = (top / 6) + 1;
@@ -59,6 +58,5 @@ t_order	*hundred_number(t_order *list_a, t_print *mob)
 	}
 	list_a = five_number(list_a, mob);
 	total_return(list_b, list_a, top - 5, mob);
-	list_a = find_first_list(list_a);
 	return (list_a);
 }

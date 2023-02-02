@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 17:13:30 by tvillare          #+#    #+#             */
-/*   Updated: 2022/12/19 14:22:03 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/02/02 16:46:32 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ static void	*str_to_list(char *str, int position, t_order *list_a)
 			header.first = list_a;
 		}
 		else
-			list_a = to_next(list_a, out, position);
+			list_a = create_new_block(list_a, out, position);
 		if (position++ != 0 && i == 0)
 			header.first = list_a;
 	}
@@ -109,7 +109,7 @@ t_order	*create_list(char **raw, t_order *list_a)
 		if (position == 0)
 			list_a = primal_list(out);
 		else
-			list_a = to_next(list_a, out, position);
+			list_a = create_new_block(list_a, out, position);
 		position++;
 	}
 	list_a->next = NULL;

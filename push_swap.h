@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:42:37 by tvillare          #+#    #+#             */
-/*   Updated: 2023/02/02 13:20:07 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/02/02 16:47:42 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ int			ft_struclen(t_order *list);
 t_order		*find_end_list(t_order *list_a);
 t_print		*find_first_print(t_print *mob);
 t_order		*find_first_list(t_order *list);
-t_order		*to_next(t_order *list_a, int out, int position);
 int			check_uniq_number(t_order *list, int num);
 int			check_order_struck_asd(t_order *list);
 int			check_order_struck_dst(t_order *list);
@@ -78,9 +77,11 @@ void		total_return(t_order *org, t_order *dst, int top, t_print *mob);
 t_print		*find_list_print(t_print *mob);
 
 void		print_list(t_print *mob);
-t_order		*move_to_top_a(t_order *list_a, int limits[2], int mode, t_print *mob);
+t_order		*move_top_a(t_order *list_a, int limits[2], int mode, t_print *mob);
 
-int		search_top_or_under(t_order *list, int min, int max);
+int			search_top_or_under(t_order *list, int min, int max, int len);
+
+void		add_block_mob(t_print *mob, int type);
 //Argoridmos
 void		two_list(t_order *list_a, t_print *mob);
 void		small_list(t_order *list_a, t_print *mob);

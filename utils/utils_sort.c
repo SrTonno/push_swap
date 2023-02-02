@@ -6,10 +6,9 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 13:14:36 by tvillare          #+#    #+#             */
-/*   Updated: 2023/02/02 13:03:30 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/02/02 16:33:01 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "../push_swap.h"
 

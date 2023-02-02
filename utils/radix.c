@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 19:08:58 by tvillare          #+#    #+#             */
-/*   Updated: 2023/02/02 13:07:24 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/02/02 17:13:30 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,8 +80,6 @@ void	radix(t_order *list_a, t_print *mob)
 	int		max;
 	int		count;
 
-	if (check_order_struck_asd(list_a) == 1)
-		return ;
 	mult = 1;
 	count = 1;
 	max = mult_2(ft_struclen(list_a) + 1);
