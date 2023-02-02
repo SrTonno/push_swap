@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 18:34:36 by tvillare          #+#    #+#             */
-/*   Updated: 2023/01/28 13:23:07 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/02/02 13:37:53 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 //https://www.ugr.es/~jsalinas/Aleatorios.htm
 #include "../push_swap.h"
-
+/*
 static int	max_index(t_order *list)
 {
 	int	len;
@@ -41,14 +41,6 @@ static int	max_index(t_order *list)
 	return (max);
 
 }
-
-/*
-1.- Pasar todos en el bit mas significativo(000001) 0 a b
-2.- Ordenar b
-3.- pasar b to a
-4.- reperir el paso 1 al 3 pero con un bit mas hacia la derecha (000010)
-*/
-
 
 t_order	*max_number(t_order *list_a, t_print *mob)
 {
@@ -97,3 +89,4 @@ t_order	*max_number(t_order *list_a, t_print *mob)
 	return (list_a);
 }
 
+*/
