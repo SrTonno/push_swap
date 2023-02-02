@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 18:29:05 by tvillare          #+#    #+#             */
-/*   Updated: 2023/02/02 16:47:48 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/02/02 17:59:44 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,8 @@ int	check_uniq_number(t_order *list, int num)
 	{
 		if (list->number == num)
 		{
-			ft_printf("Error:\n Numoros repetios");
+			//ft_printf("Error:\n Numoros repetios");
+			ft_putstr_fd("Error\n", 2);
 			struct_free(list, NULL);
 			exit(0);
 		}

@@ -86,7 +86,7 @@ git: fclean
 
 normi:
 	@echo "${BICyan}>>Check Files with ${BIRed}ERROR${BICyan} norminette<<${NoColor}"
-	@norminette -R CheckForbiddenSourceHeader | grep Error! | grep -v tester
+	@norminette -R CheckForbiddenSourceHeader | grep Error! | grep -v tester.//push
 
 .c.o:
 		@${CC} ${CFLAGS} -c $< -o ${<:.c=.o}

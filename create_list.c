@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 17:13:30 by tvillare          #+#    #+#             */
-/*   Updated: 2023/02/02 16:46:32 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/02/02 17:59:19 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,8 @@ static int	check_number(char *number)
 			i++;
 		if ('0' > number[i] || number[i] > '9')
 		{
-			ft_printf("Error:\n list not a number");
+			//ft_printf("Error:\n list not a number");
+			ft_putstr_fd("Error\n", 2);
 			exit(0);
 		}
 	}
