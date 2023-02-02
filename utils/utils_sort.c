@@ -6,13 +6,14 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 13:14:36 by tvillare          #+#    #+#             */
-/*   Updated: 2022/12/20 12:40:59 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/02/02 13:03:30 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "../push_swap.h"
 
-int check_order_struck_asd(t_order *list)
+int	check_order_struck_asd(t_order *list)
 {
 	int	aux;
 	int	len;
@@ -32,7 +33,7 @@ int check_order_struck_asd(t_order *list)
 	return (1);
 }
 
-int check_order_struck_dst(t_order *list)
+int	check_order_struck_dst(t_order *list)
 {
 	int	aux;
 	int	len;
@@ -52,7 +53,7 @@ int check_order_struck_dst(t_order *list)
 	return (1);
 }
 
-int find_min_value(t_order *list)
+int	find_min_value(t_order *list)
 {
 	int	len;
 	int	min;
@@ -69,12 +70,10 @@ int find_min_value(t_order *list)
 			min = list->number;
 		list = list->next;
 	}
-	//ft_printf("x%dx", min);
 	return (min);
-
 }
 
-int find_max_value(t_order *list)
+int	find_max_value(t_order *list)
 {
 	int	len;
 	int	max;
@@ -91,6 +90,5 @@ int find_max_value(t_order *list)
 			max = list->number;
 		list = list->next;
 	}
-	//ft_printf("x%dx", min);
 	return (max);
 }

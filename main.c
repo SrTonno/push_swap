@@ -6,13 +6,14 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:44:34 by tvillare          #+#    #+#             */
-/*   Updated: 2023/02/01 16:15:14 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/02/02 12:53:48 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "push_swap.h"
 
-void print_cosas(t_order *list_a)
+void	print_cosas(t_order *list_a)
 {
 	list_a = find_first_list(list_a);
 	ft_printf("////////////\n");
@@ -25,7 +26,23 @@ void print_cosas(t_order *list_a)
 	ft_printf("////////////\n");
 }
 
-int main(int argc, char **argv)
+static void	selector_len(t_order *list_a, t_print *mob, int len)
+{
+	if (check_order_struck_asd(list_a) == 1)
+		return ;
+	else if (len == 1)
+		two_list(list_a, mob);
+	else if (len == 2)
+		small_list(list_a, mob);
+	else if (len < 5)
+		list_a = five_number(list_a, mob);
+	else if (len < 100)
+		hundred_number(list_a, mob);
+	else
+		radix(list_a, mob);
+}
+
+int	main(int argc, char **argv)
 {
 	t_order		*list_a;
 	int			len;
@@ -40,19 +57,15 @@ int main(int argc, char **argv)
 	mob->id = 0;
 	mob->next = NULL;
 	list_a = NULL;
+
 	list_a = create_list(argv, list_a);
 	len = ft_struclen(list_a);
-	if (len == 1)
-		two_list(list_a, mob);
-	else if (len == 2)
-		small_list(list_a, mob);
-	else if (len < 5)
-		list_a = five_number(list_a, mob);
-	else if (len < 100)
-		list_a = hundred_number(list_a, mob);
-	else
-		radix(list_a, mob);
+
+	created_index(list_a, len);
+	selector_len(list_a, mob, len);
 	if (mob->next != NULL)
 		print_list(mob);
+	//print_cosas(list_a);
 	struct_free(list_a, mob);
+	return (0);
 }

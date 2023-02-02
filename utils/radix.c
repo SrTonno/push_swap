@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 19:08:58 by tvillare          #+#    #+#             */
-/*   Updated: 2023/02/01 16:13:16 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/02/02 13:07:24 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static int	mult_2(int num)
 {
 	int	mult;
 	int	count;
-	int aux;
+	int	aux;
 
 	count = 0;
 	mult = 1;
@@ -29,11 +29,11 @@ static int	mult_2(int num)
 	return (count);
 }
 
-static t_order	*push_zero(t_order *list_a, t_order *list_b, t_print *mob, int mult)
+t_order	*push_zero(t_order *list_a, t_order *list_b, t_print *mob, int mult)
 {
-	int	count;
-	int	max;
-	t_order *tmp;
+	int		count;
+	int		max;
+	t_order	*tmp;
 
 	max = ft_struclen(list_a);
 	count = 1;
@@ -58,8 +58,6 @@ static void	return_zero(t_order *list_a, t_order *list_b, t_print *mob)
 	int		max;
 	t_order	*tmp;
 
-	if (check_order_struck_asd(list_a) == 1)
-		return ;
 	list_b = find_first_list(list_b);
 	max = ft_struclen(list_b);
 	count = 0;
@@ -82,14 +80,14 @@ void	radix(t_order *list_a, t_print *mob)
 	int		max;
 	int		count;
 
+	if (check_order_struck_asd(list_a) == 1)
+		return ;
 	mult = 1;
 	count = 1;
-	created_index(list_a);
 	max = mult_2(ft_struclen(list_a) + 1);
 	list_b = ft_calloc(1, sizeof(t_order));
 	list_b->index = -2;
-
-	while(max >= count)
+	while (max >= count)
 	{
 		list_a = push_zero(list_a, list_b, mob, mult);
 		return_zero(list_a, list_b, mob);

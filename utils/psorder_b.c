@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 17:43:50 by tvillare          #+#    #+#             */
-/*   Updated: 2023/01/27 14:04:43 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/02/02 13:00:38 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,8 @@ t_order	*psorder(t_order *list, int max, t_print *mob)
 	if (list->index > aux->index)
 		list = ft_rb(list, mob);
 	if (list->index < list->next->index
-	&& ft_struclen(list) > 1)
+		&& ft_struclen(list) > 1)
 		list = ft_sb(list, mob);
-
 	return (list);
 }
 
@@ -51,13 +50,12 @@ static int	num_position(t_order *list, int num)
 
 void	total_return(t_order *org, t_order *dst, int top, t_print *mob)
 {
-	int	post;
+	int		post;
 	t_order	*tmp;
 
 	org = find_first_list(org);
 	while (top > 0)
 	{
-
 		post = num_position(org, top);
 		if (top / 2 > post && top != 0)
 			while (org->index != top)
@@ -72,5 +70,4 @@ void	total_return(t_order *org, t_order *dst, int top, t_print *mob)
 	}
 	ft_pa(org, dst, mob);
 	dst = find_first_list(dst);
-	//print_cosas(dst);
 }

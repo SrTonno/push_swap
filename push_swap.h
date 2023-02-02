@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:42:37 by tvillare          #+#    #+#             */
-/*   Updated: 2023/02/01 16:16:59 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/02/02 13:20:07 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int			check_order_struck_asd(t_order *list);
 int			check_order_struck_dst(t_order *list);
 int			find_min_value(t_order *list);
 t_order		*push_min_to_b(t_order *list_a, t_order *list_b, t_print *mob);
-void		created_index(t_order *list);
+void		created_index(t_order *list, int len);
 t_order		*move_block_b(t_order *list_a, t_order *list_b, int limits[2], t_print *mob);
 int			find_max_value(t_order *list);
 //void		return_to_a(t_order *list_a, t_order *list_b, int count);
@@ -77,8 +77,10 @@ t_order		*psorder(t_order *list, int max, t_print *mob);
 void		total_return(t_order *org, t_order *dst, int top, t_print *mob);
 t_print		*find_list_print(t_print *mob);
 
-void	print_list(t_print *mob);
+void		print_list(t_print *mob);
+t_order		*move_to_top_a(t_order *list_a, int limits[2], int mode, t_print *mob);
 
+int		search_top_or_under(t_order *list, int min, int max);
 //Argoridmos
 void		two_list(t_order *list_a, t_print *mob);
 void		small_list(t_order *list_a, t_print *mob);

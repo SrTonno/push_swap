@@ -6,13 +6,12 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 16:41:26 by tvillare          #+#    #+#             */
-/*   Updated: 2023/01/29 17:52:04 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/02/02 13:10:01 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-//struct
-//struct
+
 static t_order	*up_to_min(t_order *list, int min, int i, t_print *mob)
 {
 	list = find_first_list(list);
@@ -43,10 +42,7 @@ t_order	*push_min_to_b(t_order *list_a, t_order *list_b, t_print *mob)
 		if (list_a->number == min)
 		{
 			list_a = up_to_min(list_a, min, i, mob);
-			//if (list_a->next != NULL)
-				tmp = list_a->next;
-			/*else
-				tmp = list_a->back;*/
+			tmp = list_a->next;
 			ft_pb(list_a, list_b, mob);
 			return (tmp);
 		}
@@ -77,12 +73,12 @@ int	top_or_under(t_order *list, int num)
 	if (top > under + 1)
 		return (0);
 	return (1);
-
-
 }
+
 t_order	*min_to_top(t_order *list, int max, t_print *mob)
 {
 	int	mode;
+
 	list = find_first_list(list);
 	max += 1;
 	mode = top_or_under(list, max);
@@ -95,7 +91,6 @@ t_order	*min_to_top(t_order *list, int max, t_print *mob)
 		list = find_first_list(list);
 	}
 	return (list);
-
 }
 
 t_print	*find_list_print(t_print *mob)

@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 18:29:05 by tvillare          #+#    #+#             */
-/*   Updated: 2023/02/01 15:27:11 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/02/02 13:05:52 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,22 +30,14 @@ t_order	*find_end_list(t_order *list)
 
 t_order	*find_first_list(t_order *list)
 {
-	//if (list == NULL)
-		//return (NULL);
-	//ft_printf("Start BACK%s\n", list->back);
 	while (list->back != NULL)
-	{
-
-		//ft_printf("()%d-%d-%s\n", list->number, list->index, list->back);
 		list = list->back;
-	}
-	//ft_printf("FIN BACK\n");
 	return (list);
 }
 
 int	ft_struclen(t_order *list)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	list = find_first_list(list);
@@ -72,9 +64,10 @@ int	check_uniq_number(t_order *list, int num)
 		if (list->number == num)
 		{
 			ft_printf("Error:\n Numoros repetios");
+			struct_free(list, NULL);
 			exit(0);
 		}
 		list = list->next;
 	}
-	return(1);
+	return (1);
 }
