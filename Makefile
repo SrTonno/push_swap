@@ -7,7 +7,7 @@ CFILES		= \
 			utils/utils_struck2.c move/rotate.c move/swap.c move/push.c move/reverse.c \
 			sort/small_list.c sort/5_numbers.c utils/created_index.c utils/move_block_b.c \
 			sort/100_numbers.c utils/return_stack.c utils/struct_free.c \
-			utils/psorder_b.c utils/radix.c utils/print_list.c
+			utils/psorder_b.c utils/radix.c utils/print_list.c utils/ft_check_int.c
 OBJS	=	${CFILES:.c=.o}
 
 CLIBFT		= \
@@ -86,7 +86,7 @@ git: fclean
 
 normi:
 	@echo "${BICyan}>>Check Files with ${BIRed}ERROR${BICyan} norminette<<${NoColor}"
-	@norminette -R CheckForbiddenSourceHeader | grep Error! | grep -v tester.//push
+	@norminette -R CheckForbiddenSourceHeader | grep Error! | grep -v tester
 
 .c.o:
 		@${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
@@ -104,12 +104,13 @@ re: fclean all
 
 help:
 	@echo "${UGreen}Options of MakeFile:${NoColor}"
+	@echo "Used: make [options]"
 	@echo "\t${BICyan}Default:${NoColor} Created '${NAME}'"
 	@echo "\t${IRed}clean:${NoColor} Delete '.o'."
 	@echo "\t${BIRed}fclean:${NoColor} Delete'.o', '${NLIBRARY}'"
 	@echo "\t${BICyan}re:${NoColor} Delete '.o', '${NLIBRARY}', '${NAME}' and creates '${NAME}'"
 	@echo "\t${BIPurple}git:${NoColor} Push to git."
 	@echo "\t${BICyan}normi:${NoColor} Check file with Error the norminette."
-	@echo "MakeFile by ${UBlue}tvillare.${NoColor}"
+	@echo "MakeFile by ${UBlue}tvillare${NoColor}."
 
-.PHONY = all clean fclean re help
+.PHONY = all clean fclean re help normi git

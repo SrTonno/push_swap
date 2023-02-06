@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 17:13:30 by tvillare          #+#    #+#             */
-/*   Updated: 2023/02/02 19:38:56 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/02/06 16:34:24 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ static t_order	*primal_list(int out)
 
 static int	check_number(char *number)
 {
-	int	len;
-	int	i;
+	int		len;
+	int		i;
 
 	len = ft_strlen(number);
 	i = -1;
@@ -51,12 +51,16 @@ static int	check_number(char *number)
 			i++;
 		if ('0' > number[i] || number[i] > '9')
 		{
-			//ft_printf("Error:\n list not a number");
-			ft_putstr_fd("Error\n not number", 2);
+			ft_putstr_fd("Error\n", 2);
 			exit(0);
 		}
 	}
-	return (check_max_int(number, ft_itoa(ft_atoi(number))));
+	if (ft_check_int(number) != 1)
+	{
+		ft_putstr_fd("Error\n", 2);
+		exit (1);
+	}
+	return (ft_atoi(number));
 }
 
 static void	*str_to_list(char *str, int position, t_order *list_a)

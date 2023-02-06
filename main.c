@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:44:34 by tvillare          #+#    #+#             */
-/*   Updated: 2023/02/02 17:57:59 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/02/06 16:37:01 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,8 @@ void	print_cosas(t_order *list_a)
 static void	selector_len(t_order *list_a, t_print *mob, int len)
 {
 	if (len == 0)
-	{
-		ft_putstr_fd("Error\n", 2);
 		return ;
-	}
-	else if(check_order_struck_asd(list_a) == 1)
+	else if (check_order_struck_asd(list_a) == 1)
 		return ;
 	else if (len == 1)
 		two_list(list_a, mob);

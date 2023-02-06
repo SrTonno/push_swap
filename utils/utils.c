@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 16:53:08 by tvillare          #+#    #+#             */
-/*   Updated: 2023/02/03 12:41:34 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/02/06 16:45:52 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,40 +45,4 @@ int	is_only_cezoc(char *num, int i)
 			return (-1);
 	}
 	return (0);
-}
-int check_max_int(char *org, char *trans)
-{
-	int	i;
-	int	len;
-	int	check_a;
-	int	check_b;
-
-	len = ft_strlen(org);
-	i = 0;
-	while (i < len)
-	{
-		if (org[i] == '+')
-			i++;
-		else if (org[i] == '0' && trans[i] == '0')
-		{
-			check_a = is_only_cezoc(org, i + 1);
-			check_b = is_only_cezoc(org, i + 1);
-			if (check_a == 0)
-				break ;
-			if (check_a > 0)
-			{
-				if (org[check_a] == trans[i] || org[check_a] == '+')
-					break ;
-			}
-		}
-		else if (org[i] == trans[i])
-			i++;
-		else
-		{
-			ft_putstr_fd("Error\n int max", 2);
-			exit (1);
-		}
-	}
-	return (ft_atoi(org));
-
 }

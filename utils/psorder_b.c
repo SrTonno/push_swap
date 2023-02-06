@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 17:43:50 by tvillare          #+#    #+#             */
-/*   Updated: 2023/02/02 13:00:38 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/02/06 16:42:51 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,6 @@ t_order	*psorder(t_order *list, int max, t_print *mob)
 	(void)max;
 	list = find_first_list(list);
 	aux = find_end_list(list);
-	/*if (list->index < aux->index)
-	//if (list->index > max / 3)
-		list = ft_rrb(list);*/
 	if (list->index > aux->index)
 		list = ft_rb(list, mob);
 	if (list->index < list->next->index
