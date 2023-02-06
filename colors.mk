@@ -1,7 +1,7 @@
 # Reset
 	NoColor=\033[0m
 
-	# Regular Colors
+# Regular Colors
 	Black=\033[0;30m
 	Red=\033[0;31m
 	Green=\033[0;32m

@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:42:37 by tvillare          #+#    #+#             */
-/*   Updated: 2023/02/02 16:47:42 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/02/03 12:19:01 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,9 @@ t_order		*move_top_a(t_order *list_a, int limits[2], int mode, t_print *mob);
 int			search_top_or_under(t_order *list, int min, int max, int len);
 
 void		add_block_mob(t_print *mob, int type);
+int			check_max_int(char *org, char *trans);
+int			is_only_cezoc(char *num, int i);
+
 //Argoridmos
 void		two_list(t_order *list_a, t_print *mob);
 void		small_list(t_order *list_a, t_print *mob);
