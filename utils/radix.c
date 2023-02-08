@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 19:08:58 by tvillare          #+#    #+#             */
-/*   Updated: 2023/02/02 17:13:30 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/02/08 13:02:24 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,4 +92,6 @@ void	radix(t_order *list_a, t_print *mob)
 		count++;
 		mult *= 2;
 	}
+	if (list_b != NULL)
+		free(list_b);
 }

@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 16:50:34 by tvillare          #+#    #+#             */
-/*   Updated: 2023/02/02 16:43:26 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/02/08 12:27:23 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,8 @@ static t_order	*delete_block_b(t_order *list_b)
 	t_order	*aux;
 
 	aux = list_b;
-	free (aux);
 	list_b = list_b->back;
+	free (aux);
 	list_b->next = NULL;
 	return (list_b);
 }

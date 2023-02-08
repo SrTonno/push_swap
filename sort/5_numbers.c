@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 16:10:23 by tvillare          #+#    #+#             */
-/*   Updated: 2023/02/02 16:15:14 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/02/08 13:02:26 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,7 @@ t_order	*five_number(t_order *list_a, t_print *mob)
 		ft_pa(list_b, list_a, mob);
 	if (len_b >= 4)
 		ft_pa(list_b, list_a, mob);
+	if (list_b != NULL)
+		free(list_b);
 	return (list_a);
 }

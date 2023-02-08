@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 16:53:08 by tvillare          #+#    #+#             */
-/*   Updated: 2023/02/06 16:45:52 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/02/08 12:12:24 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,4 @@ void	add_block_mob(t_print *mob, int type)
 	tmp->id = type;
 	mob->next = tmp;
 	tmp->next = NULL;
-}
-
-int	is_only_cezoc(char *num, int i)
-{
-	while (num[i] == '\0' || num[i] == '+' || num[i] == '-')
-	{
-		if (num[i] == '0')
-			i++;
-		else if (num[i] == '+' || num[i] == '-')
-			return (i);
-		else
-			return (-1);
-	}
-	return (0);
 }

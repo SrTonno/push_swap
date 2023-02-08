@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 18:51:25 by tvillare          #+#    #+#             */
-/*   Updated: 2023/02/02 13:01:45 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/02/08 12:12:42 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ void	struct_free(t_order *list, t_print *mob)
 	t_order	*tmp;
 	t_print	*aux;
 
-	if (mob != NULL)
+	list = find_first_list(list);
+	if (list != NULL)
 	{
 		while (list->next != NULL)
 		{
@@ -27,13 +28,14 @@ void	struct_free(t_order *list, t_print *mob)
 		}
 		free(list);
 	}
-	if (mob == NULL)
-		return ;
-	while (mob->next != NULL)
+	if (mob != NULL)
 	{
-		aux = mob;
-		mob = mob->next;
-		free(aux);
+		while (mob->next != NULL)
+		{
+			aux = mob;
+			mob = mob->next;
+			free(aux);
+		}
+		free(mob);
 	}
-	free(mob);
 }

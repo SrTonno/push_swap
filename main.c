@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:44:34 by tvillare          #+#    #+#             */
-/*   Updated: 2023/02/06 16:37:01 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/02/08 13:14:42 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,10 @@ int	main(int argc, char **argv)
 	len = ft_struclen(list_a);
 	created_index(list_a, len);
 	selector_len(list_a, mob, len);
+
 	if (mob->next != NULL)
 		print_list(mob);
 	struct_free(list_a, mob);
+	//system("leaks -q push_swap");
 	return (0);
 }
