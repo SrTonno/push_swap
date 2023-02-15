@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 12:20:19 by tvillare          #+#    #+#             */
-/*   Updated: 2023/02/02 16:53:30 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/02/15 13:11:52 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@ static void	push(t_order *org, t_order *dst)
 	}
 	else
 		tmp = org;
-	if (dst != NULL)
-		dst = find_first_list(dst);
+	dst = find_first_list(dst);
 	tmp->next = dst;
 	dst->back = tmp;
 	dst = dst->back;

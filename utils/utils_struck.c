@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 18:29:05 by tvillare          #+#    #+#             */
-/*   Updated: 2023/02/06 16:48:26 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/02/15 13:12:17 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	check_uniq_number(t_order *list, int num)
 	{
 		if (list->number == num)
 		{
-			ft_putstr_fd("Error\n", 2);
+			ft_putstr_fd("Error\n just one namber", 2);
 			struct_free(list, NULL);
 			exit(0);
 		}

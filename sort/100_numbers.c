@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 18:34:36 by tvillare          #+#    #+#             */
-/*   Updated: 2023/02/08 13:03:20 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/02/15 13:12:30 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,7 @@ t_order	*hundred_number(t_order *list_a, t_print *mob)
 			limits[1] = top - 5;
 		list_b = find_first_list(list_b);
 	}
-
 	list_a = five_number(list_a, mob);
 	total_return(list_b, list_a, top - 5, mob);
-	//if (list_b != NULL)
-		//free(list_b);
-	//struct_free(list_b, NULL);
 	return (list_a);
 }

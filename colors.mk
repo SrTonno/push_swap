@@ -70,3 +70,7 @@
 	On_IPurple=\033[0;105m
 	On_ICyan=\033[0;106m
 	On_IWhite=\033[0;107m
+
+#Emotes
+	God = 🍺
+	Bad = ❌

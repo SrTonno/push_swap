@@ -6,41 +6,28 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:44:34 by tvillare          #+#    #+#             */
-/*   Updated: 2023/02/08 13:14:42 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/02/15 13:11:36 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_cosas(t_order *list_a)
-{
-	list_a = find_first_list(list_a);
-	ft_printf("////////////\n");
-	while (list_a->next != NULL)
-	{
-		ft_printf("$/$%d/%d\n", list_a->number, list_a->index);
-		list_a = list_a->next;
-	}
-	ft_printf("$/$%d/%d\n", list_a->number, list_a->index);
-	ft_printf("////////////\n");
-}
-
-static void	selector_len(t_order *list_a, t_print *mob, int len)
+static t_order	*selector_len(t_order *list_a, t_print *mob, int len)
 {
 	if (len == 0)
-		return ;
+		return (list_a);
 	else if (check_order_struck_asd(list_a) == 1)
-		return ;
+		return (list_a);
 	else if (len == 1)
 		two_list(list_a, mob);
 	else if (len == 2)
 		small_list(list_a, mob);
 	else if (len < 7)
 		list_a = five_number(list_a, mob);
-	else if (len < 100)
-		hundred_number(list_a, mob);
 	else
 		radix(list_a, mob);
+	list_a = find_first_list(list_a);
+	return (list_a);
 }
 
 int	main(int argc, char **argv)
@@ -51,7 +38,7 @@ int	main(int argc, char **argv)
 
 	if (argc < 2)
 	{
-		ft_putstr_fd("Error\n", 2);
+		ft_putstr_fd("Error\n Invalid arguments", 2);
 		return (0);
 	}
 	mob = malloc(1 * sizeof(t_print));
@@ -61,11 +48,9 @@ int	main(int argc, char **argv)
 	list_a = create_list(argv, list_a);
 	len = ft_struclen(list_a);
 	created_index(list_a, len);
-	selector_len(list_a, mob, len);
-
+	list_a = selector_len(list_a, mob, len);
 	if (mob->next != NULL)
 		print_list(mob);
 	struct_free(list_a, mob);
-	//system("leaks -q push_swap");
 	return (0);
 }

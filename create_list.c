@@ -6,7 +6,7 @@
 /*   By: tvillare <tvillare@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 17:13:30 by tvillare          #+#    #+#             */
-/*   Updated: 2023/02/08 12:07:13 by tvillare         ###   ########.fr       */
+/*   Updated: 2023/02/14 11:49:38 by tvillare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,13 @@ static int	check_number(char *number)
 			i++;
 		if ('0' > number[i] || number[i] > '9')
 		{
-			ft_putstr_fd("Error\n", 2);
+			ft_putstr_fd("Error\n Not a number", 2);
 			exit(0);
 		}
 	}
 	if (ft_check_int(number) != 1)
 	{
-		ft_putstr_fd("Error\n", 2);
+		ft_putstr_fd("Error\n max int", 2);
 		exit (1);
 	}
 	return (ft_atoi(number));

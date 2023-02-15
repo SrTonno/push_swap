@@ -71,11 +71,11 @@ all: ${NAME}
 
 ${NAME}: ${NLIBRARY} ${OBJS}
 	@${CC} ${CFLAGS} ${OBJS} ${NLIBRARY} -o $@
-	@echo "🍺${Green}Created '${NAME}'.${NoColor}"
+	@echo "${God}${Green}Created '${NAME}'.${NoColor}"
 
 $(NLIBRARY): $(LIBFT)
 	@$(AR) $(ARFLAGS) $@ $^
-	@echo "🍺${Green}Created '${NLIBRARY}'.${NoColor}"
+	@echo "${God}${Green}Created '${NLIBRARY}'.${NoColor}"
 
 git: fclean
 	@echo "\t${BIPurple}>>Push To Git<<${NoColor}"
@@ -87,6 +87,7 @@ git: fclean
 normi:
 	@echo "${BICyan}>>Check Files with ${BIRed}ERROR${BICyan} norminette<<${NoColor}"
 	@norminette -R CheckForbiddenSourceHeader | grep Error! | grep -v tester
+	@echo "Total Errores $$(norminette -R CheckForbiddenSourceHeader | grep -v Error! | grep -v tester | wc -l)"
 
 .c.o:
 		@${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
@@ -94,11 +95,11 @@ normi:
 ###############################################################################
 clean:
 		@${RM} ${OBJS} ${LIBFT}
-		@echo "❌${Red}Delete .o.${NoColor}"
+		@echo "${Bad}${Red}Delete .o.${NoColor}"
 
 fclean: clean
 		@${RM} ${NLIBRARY} ${NAME}
-		@echo "❌${Red}Delete '${NLIBRARY}' and '${NAME}'.${NoColor}"
+		@echo "${Bad}${Red}Delete '${NLIBRARY}' and '${NAME}'.${NoColor}"
 
 re: fclean all
 
